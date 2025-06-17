@@ -267,7 +267,6 @@ footer {
     @include m.shadow(v.$primary-color, 0px, 2px, 40px, 1px);
     margin-bottom: 90px;
     border-bottom: #d3d1ff 3px solid;
-
     input {
       @include m.input-style(#b3b1ee, #000, 15px);
       font-size: 21px;
