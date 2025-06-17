@@ -4,7 +4,8 @@
   align-items: center;
 }
 
-.producto-destacado, .producto-destacado-pag2 {
+.producto-destacado, .producto-destacado-pag2,
+.producto-destacado-compu {
   width: 92%;
   height: 200px;
   box-shadow: #d1d1d1 5px 5px 0px 2px;
@@ -28,11 +29,22 @@ body {
 
 .navbar {
   background-color: #e2e2e2;
-  box-shadow: 0 3px 15px hsla(242, 100%, 71%, 0.411);
+  box-shadow: #4640f1 0px 2px 40px 1px;
+  border-bottom: #9fb0ff 2.9px solid;
   margin-bottom: none;
+  margin-bottom: 30px;
 }
 .navbar .container-fluid {
-  padding: 2px 1px;
+  padding: 0px;
+  margin: 10px 5px 0 5px;
+}
+.navbar .container-fluid .nav-item {
+  margin-left: 10px;
+}
+.navbar .container-fluid input {
+  width: 200px;
+  height: 50px;
+  margin-left: 5px;
 }
 
 .navbar-brand {
@@ -51,6 +63,12 @@ body {
   margin: 0 5px 0 0;
   height: 38px;
   width: 60px;
+  transition: 0.1s ease-in-out;
+}
+
+.boton-header:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
 }
 
 .color-azul {
@@ -107,6 +125,9 @@ h3 {
   width: 100%;
 }
 
+.producto-destacado {
+  transition: transform 0.22s ease-in-out;
+}
 .producto-destacado img {
   width: 40%;
   object-fit: contain;
@@ -132,33 +153,50 @@ h3 {
   padding: 0 30px;
 }
 
-.producto-destacado-pag2 {
+.producto-destacado:hover,
+.producto-destacado-pag2:hover,
+.producto-destacado-compu:hover {
+  transform: scale(1.015) translateY(-10px);
+}
+
+.producto-destacado-pag2,
+.producto-destacado-compu {
+  transition: transform 0.22s ease-in-out;
   background-color: #ffffff;
 }
-.producto-destacado-pag2 img {
+.producto-destacado-pag2 img,
+.producto-destacado-compu img {
   width: 40%;
   margin: 5px;
   object-fit: contain;
   height: auto;
 }
-.producto-destacado-pag2 h4 {
+.producto-destacado-pag2 h4,
+.producto-destacado-compu h4 {
   font-size: 21px;
 }
-.producto-destacado-pag2 p {
+.producto-destacado-pag2 p,
+.producto-destacado-compu p {
   width: 100%;
 }
-.producto-destacado-pag2-info {
+.producto-destacado-pag2-info,
+.producto-destacado-compu-info {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin: 15px 0 15px 0;
 }
-.producto-destacado-pag2-info button {
-  width: 100%;
+.producto-destacado-pag2-info button,
+.producto-destacado-compu-info button {
+  width: 92%;
   align-self: center;
   color: #ebebeb;
   margin-top: 10px;
   padding: 0 30px;
+}
+
+.producto-destacado-compu {
+  height: auto;
 }
 
 .contactar {
@@ -166,12 +204,16 @@ h3 {
   flex-direction: column;
 }
 .contactar h3 {
-  font-size: 24px;
-  margin: 40px 0 20px 0;
+  font-size: 19px;
+  margin: 40px 0px 20px 0px;
+  font-weight: 400;
 }
 .contactar h2 {
-  font-size: 25px;
-  margin: 50px 5px 20px 5px;
+  font-size: 22px;
+  margin: 50px 10px 25px 10px;
+}
+.contactar button:hover {
+  transform: scale(1.1);
 }
 .contactar button {
   background-color: #4640f1;
@@ -179,9 +221,10 @@ h3 {
   border: none;
   border-radius: 8px;
   padding: 5px 15px;
-  margin: 10px 15px 10px 15px;
+  margin: 30px 15px 10px 15px;
   padding: 10px 20px;
   width: 270px;
+  height: 60px;
 }
 .contactar .grupo-ingresos {
   width: 100%;
@@ -201,7 +244,7 @@ h3 {
   height: 34px;
   border: 1px solid rgba(148, 148, 148, 0.596);
   border-radius: 10px;
-  background-color: #c0beff;
+  background-color: #cbc9ff;
   padding: 19px 5px;
   font-size: 16.5px;
 }
@@ -323,17 +366,29 @@ footer button {
   }
   .contenedor-productos-destacados {
     width: 40%;
-    margin: auto;
+    margin: 15px auto;
+  }
+  .contenedor-productos-destacados img {
+    width: 400px;
+    height: 200px;
+  }
+  .contenedor-productos-destacados button {
+    width: 260px;
   }
   .contenedor-productos-destacados-pag2 {
     width: 100%;
     justify-content: center;
     display: flex;
     flex-direction: row;
+    margin-bottom: 150px;
   }
-  .producto-destacado-pag2 {
+  .contenedor-productos-destacados-pag2 button {
+    width: 260px;
+  }
+  .producto-destacado-pag2, .producto-destacado-compu {
     width: 30%;
     margin: 17px;
+    height: 230px;
   }
   .contactar h3 {
     font-size: 40px;
@@ -352,6 +407,9 @@ footer button {
     text-align: left;
     margin-left: 18px;
   }
+  .contactar .grupo-ingresos .ingreso {
+    margin-top: 50px;
+  }
   .contactar .grupo-ingresos .ingreso input {
     height: 70px;
   }
@@ -362,7 +420,7 @@ footer button {
     width: 300px;
     height: 70px;
     font-size: 23px;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 }
 

@@ -16,10 +16,21 @@ body {
 
 .navbar {
   background-color: v.$light-gray;
-  box-shadow: 0 3px 15px v.$shadow-blue;
+  @include m.shadow(v.$primary-color, 0px, 2px, 40px, 1px);
+  border-bottom:#9fb0ff 2.9px solid;
   margin-bottom: none;
+  margin-bottom: 30px;
   .container-fluid{
-    padding: 2px 1px;
+    padding: 0px;
+    margin: 10px 5px 0 5px;
+    .nav-item{
+      margin-left: 10px;
+    }
+    input{
+      width: 200px;
+      height: 50px;;
+      margin-left: 5px;
+    }
   }
   
 }
@@ -36,6 +47,11 @@ body {
   margin: 0 5px 0 0;
   height: 38px;
   width: 60px;
+  transition: 0.1s ease-in-out;
+}
+.boton-header:hover {
+  background-color: rgb(172, 172, 172);
+  color: black;
 }
 
 .color-azul {
@@ -88,6 +104,7 @@ h3 {
 
 .producto-destacado {
   @extend %product-style;
+  transition: transform 0.22s ease-in-out;
  img {
   width: 40%;
   object-fit: contain;
@@ -110,16 +127,20 @@ h3 {
       color: v.$background-page;
       margin-top: 15px;
       padding: 0 30px;
-      
     }
   }
 }
+.producto-destacado:hover,
+.producto-destacado-pag2:hover,
+.producto-destacado-compu:hover{
+  transform: scale(1.015) translateY(-10px);
+}
 
 
-
-.producto-destacado-pag2 {
+.producto-destacado-pag2, 
+.producto-destacado-compu {
   @extend %product-style;
-  // margin: 5px;
+  transition: transform 0.22s ease-in-out;
   background-color: v.$white;
 
   img {
@@ -141,7 +162,7 @@ h3 {
     margin: 15px 0 15px 0;
 
     button {
-      width: 100%;
+      width: 92%;
       align-self: center;
       color: v.$background-page;
       margin-top: 10px;
@@ -149,25 +170,33 @@ h3 {
     }
   }
 }
+.producto-destacado-compu{
+  height: auto;
+}
 .contactar{
   @extend %flex-center;
   text-align: center;
   flex-direction: column;
 
   h3{
-    font-size: 24px;
-    margin: 40px 0 20px 0;
+    font-size: 19px;
+    margin: 40px 0px 20px 0px;
+    font-weight: 400;
   }
   h2 {
-    font-size: 25px;
-    margin: 50px 5px 20px 5px;
+    font-size: 22px;
+    margin: 50px 10px 25px 10px;
+    
   }
-  
+  button:hover{
+    transform: scale(1.1);
+  }
   button{
     @include m.button-style(v.$primary-color, v.$light-gray);
-    margin: 10px 15px 10px 15px;
+    margin: 30px 15px 10px 15px;
     padding: 10px 20px;
     width: 270px;
+    height: 60px;
   }
   .grupo-ingresos{
     width: 100%;
@@ -187,7 +216,7 @@ h3 {
       height: 34px;
       border: 1px solid v.$medium-gray;
       border-radius: 10px;
-      background-color: #c0beff;
+      background-color: #cbc9ff;
       padding: 19px 5px;
       font-size: 16.5px;
     }
@@ -313,7 +342,14 @@ footer {
 
   .contenedor-productos-destacados {
     width: 40%;
-    margin: auto;
+    margin: 15px auto;
+    img{
+      width: 400px;
+      height: 200px;
+    }
+    button{
+      width: 260px;
+    }
   }
 
   .contenedor-productos-destacados-pag2 {
@@ -321,11 +357,16 @@ footer {
     justify-content: center;
     display: flex;
     flex-direction: row;
+    margin-bottom: 150px;
+    button{
+      width: 260px;
+    }
   }
 
-  .producto-destacado-pag2 {
+  .producto-destacado-pag2,.producto-destacado-compu {
     width: 30%;
     margin: 17px;
+    height: 230px;
   }
   .contactar{
     h3{
@@ -349,6 +390,7 @@ footer {
         margin-left: 18px;
       }
       .ingreso{
+        margin-top: 50px;
         
         input{
           height: 70px;
@@ -360,7 +402,7 @@ footer {
           width: 300px;
           height: 70px;
           font-size: 23px;
-          margin-top: 30px;
+          margin-top: 50px;
         }
       }
     }
