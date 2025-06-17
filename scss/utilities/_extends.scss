@@ -1,0 +1,18 @@
+@use "./mixins" as m;
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%product-style {
+  width: 92%;
+  height: 200px;
+  @include m.shadow(#d1d1d1, 5px, 5px, 0px, 2px);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}

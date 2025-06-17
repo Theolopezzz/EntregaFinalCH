@@ -1,0 +1,20 @@
+@use "variables" as v;
+
+@mixin shadow($color, $x, $y, $blur, $spread) {
+  box-shadow: $color $x $y $blur $spread;
+}
+
+@mixin button-style($bg-color, $text-color, $radius: 8px, $padding: 5px 15px) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $radius;
+  padding: $padding;
+}
+
+@mixin input-style($bg-color: v.$medium-gray, $text-color: #000, $padding: 15px 39px) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: $padding;
+}

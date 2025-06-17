@@ -1,0 +1,368 @@
+@use "utilities/variables" as v;
+@use "utilities/mixins" as m;
+@use "utilities/extends";
+// Base-------------------------------
+body {
+  background-color: v.$background-page;
+  margin: 0;
+  padding: 0;
+  font-family: v.$font-main;
+}
+
+// Header-----------------------------
+.navbar-desktop {
+  display: none;
+}
+
+.navbar {
+  background-color: v.$light-gray;
+  box-shadow: 0 3px 15px v.$shadow-blue;
+  margin-bottom: none;
+  .container-fluid{
+    padding: 2px 1px;
+  }
+  
+}
+
+.navbar-brand {
+  font-size: 27px;
+  margin: 7px;
+  font-weight: bold;
+  text-shadow: v.$text-shadow-dark 1px 1.3px 2.5px;
+}
+
+.boton-header {
+  @include m.button-style(v.$primary-color, rgb(46, 46, 46));
+  margin: 0 5px 0 0;
+  height: 38px;
+  width: 60px;
+}
+
+.color-azul {
+  color: v.$primary-color;
+}
+
+.btn-outline-success {
+  @include m.button-style(v.$primary-color, v.$light-gray);
+}
+
+.form-control {
+  @include m.input-style(#b3b1ee);
+  border-radius: 8px;
+}
+
+// Main------------------------------
+.enlaces,
+.linea,
+.titulo-desktop {
+  display: none;
+}
+
+#carouselExampleAutoplaying {
+  border-radius: 90px;
+  overflow: hidden;
+}
+
+.carousel {
+  margin: 10px auto;
+  width: 97%;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0 10px 30px;
+  text-shadow: v.$text-shadow-light 1px 2px 1px;
+}
+
+h3 {
+  margin: 40px 0px 50px 18px;
+}
+
+.contenedor-productos-destacados,
+.contenedor-productos-destacados-pag2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.producto-destacado {
+  @extend %product-style;
+ img {
+  width: 40%;
+  object-fit: contain;
+  height: auto;
+ }
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    h4{
+    font-size: 21px;
+    }
+    p{
+      width: 100%;
+    }
+    button {
+      align-self: center;
+      width: 100%;
+      color: v.$background-page;
+      margin-top: 15px;
+      padding: 0 30px;
+      
+    }
+  }
+}
+
+
+
+.producto-destacado-pag2 {
+  @extend %product-style;
+  // margin: 5px;
+  background-color: v.$white;
+
+  img {
+    width: 40%;
+    margin: 5px;
+    object-fit: contain;
+    height: auto;
+  }
+  h4{
+    font-size: 21px;
+  }
+  p{
+    width: 100%;
+  }
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 15px 0;
+
+    button {
+      width: 100%;
+      align-self: center;
+      color: v.$background-page;
+      margin-top: 10px;
+      padding: 0 30px;
+    }
+  }
+}
+.contactar{
+  @extend %flex-center;
+  text-align: center;
+  flex-direction: column;
+
+  h3{
+    font-size: 24px;
+    margin: 40px 0 20px 0;
+  }
+  h2 {
+    font-size: 25px;
+    margin: 50px 5px 20px 5px;
+  }
+  
+  button{
+    @include m.button-style(v.$primary-color, v.$light-gray);
+    margin: 10px 15px 10px 15px;
+    padding: 10px 20px;
+    width: 270px;
+  }
+  .grupo-ingresos{
+    width: 100%;
+  }
+  .par-ingresos{
+    display: flex;
+    width: 100%;
+    
+  }
+  .ingreso{
+    flex: 1;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 19px;
+    input{
+      width: 95%;
+      height: 34px;
+      border: 1px solid v.$medium-gray;
+      border-radius: 10px;
+      background-color: #c0beff;
+      padding: 19px 5px;
+      font-size: 16.5px;
+    }
+    .descargo{
+      height: 110px;
+    }
+    button{
+       width: 75%;
+       height: 50px;
+    }
+  }
+}
+
+
+// Footer
+footer {
+  text-align: center;
+  background-color: v.$light-gray;
+  color: v.$dark-gray;
+  padding: 30px 0;
+  margin-top: 60px;
+
+  h4 {
+    margin: 10px 0;
+  }
+
+  button {
+    @include m.button-style(v.$primary-color, v.$light-gray);
+    margin: 10px 15px 10px 15px;
+  }
+}
+
+.boton-preguntas {
+  @include m.button-style(#9b9b9b, v.$dark-gray);
+}
+
+// Media Queries
+@media (min-width: 768px) {
+  .navbar-mobile {
+    display: none;
+  }
+
+  .navbar-desktop {
+    background-color: v.$light-gray;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    @include m.shadow(v.$primary-color, 0px, 2px, 40px, 1px);
+    margin-bottom: 90px;
+    border-bottom: #d3d1ff 3px solid;
+
+    input {
+      @include m.input-style(#b3b1ee, #000, 15px);
+      font-size: 21px;
+      width: 650px;
+      height: 55px;
+      margin: 10px 0 5px;
+      border-radius: 8px;
+    }
+
+    button {
+      @include m.button-style(v.$primary-color, v.$light-gray, 10px);
+      width: 150px;
+      height: 48px;
+      font-size: 20px;
+      margin: 14px 20px 0 10px;
+    }
+  }
+
+  .logo {
+    font-size: 38px;
+    font-weight: bold;
+    text-shadow: v.$text-shadow-dark 1px 1.5px 2px;
+    margin: 8px 0px 10px 15px;
+  }
+
+  .titulo-mobile {
+    display: none;
+  }
+
+  .enlaces {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 300px 80px;
+
+    a {
+      color: #000000;
+      font-size: 32px;
+      text-decoration: none;
+    }
+  }
+
+  .linea {
+    display: block;
+    opacity: 1;
+    border: none;
+    width: 75%;
+    height: 2.9px;
+    background-color: v.$primary-color;
+    margin: 0 auto;
+  }
+
+  .titulo-desktop {
+    display: block;
+    font-size: 60px;
+    margin: 90px 0px 30px;
+    text-align: center;
+    text-shadow: v.$primary-color 1px 2px 3px;
+    color: #000;
+  }
+
+  .carousel {
+    width: 92%;
+    height: 800px;
+  }
+
+  h3 {
+    font-size: 49px;
+    margin: 70px 45px 60px;
+    text-shadow: v.$text-shadow-black 1px 1px 2px;
+  }
+
+  .contenedor-productos-destacados {
+    width: 40%;
+    margin: auto;
+  }
+
+  .contenedor-productos-destacados-pag2 {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .producto-destacado-pag2 {
+    width: 30%;
+    margin: 17px;
+  }
+  .contactar{
+    h3{
+      font-size: 40px;
+      margin: 20px 0 50px 0;
+    }
+    button{
+      width: 300px;
+      height: 60px;
+      font-size: 22px;
+      
+    }
+    h2{
+      font-size: 30px;
+      margin: 90px 0 30px 0;
+    }
+    .grupo-ingresos{ 
+      
+      .par-ingresos {
+        text-align: left;
+        margin-left: 18px;
+      }
+      .ingreso{
+        
+        input{
+          height: 70px;
+        }
+        label{
+        font-size: 22px;
+        }
+        button{
+          width: 300px;
+          height: 70px;
+          font-size: 23px;
+          margin-top: 30px;
+        }
+      }
+    }
+  } 
+}
