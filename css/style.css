@@ -16,6 +16,15 @@
   margin-top: 20px;
 }
 
+.contactar .ingreso input, .contactar .ingreso textarea {
+  border: 1px solid rgba(148, 148, 148, 0.596);
+  border-radius: 10px;
+  background-color: #d8d8d8;
+  padding: 10px 5px;
+  font-size: 16.5px;
+  box-shadow: #424242 0px 2px 5px 0px;
+}
+
 body {
   background-color: #ebebeb;
   margin: 0;
@@ -45,11 +54,11 @@ body {
   width: 200px;
   height: 50px;
   margin-left: 5px;
+  padding: 5px 15px;
 }
-
-.navbar-brand {
+.navbar .navbar-brand {
   font-size: 27px;
-  margin: 7px;
+  margin: 0 0 7px 5px;
   font-weight: bold;
   text-shadow: #424242 1px 1.3px 2.5px;
 }
@@ -63,10 +72,11 @@ body {
   margin: 0 5px 0 0;
   height: 38px;
   width: 60px;
-  transition: 0.1s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.boton-header:hover {
+.boton-header:hover,
+.btn-outline-success:hover {
   background-color: rgb(172, 172, 172);
   color: black;
 }
@@ -81,6 +91,7 @@ body {
   border: none;
   border-radius: 8px;
   padding: 5px 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 .form-control {
@@ -98,7 +109,7 @@ body {
 }
 
 #carouselExampleAutoplaying {
-  border-radius: 90px;
+  border-radius: 80px;
   overflow: hidden;
 }
 
@@ -137,7 +148,7 @@ h1 {
 }
 
 h3 {
-  margin: 50px 0px 50px 18px;
+  margin: 50px 18px 50px 18px;
 }
 
 .contenedor-productos-destacados,
@@ -174,6 +185,14 @@ h3 {
   color: #ebebeb;
   margin-top: 15px;
   padding: 0 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.producto-destacado button:hover,
+.producto-destacado-pag2 button:hover,
+.producto-destacado-compu button:hover {
+  background-color: #170b85;
+  color: #ffffff;
 }
 
 .producto-destacado:hover,
@@ -231,6 +250,10 @@ h3 {
   margin: 40px 0px 20px 0px;
   font-weight: 400;
 }
+.contactar h2 {
+  font-size: 22px;
+  margin: 50px 10px 25px 10px;
+}
 .contactar button:hover {
   transform: scale(1.1);
 }
@@ -242,7 +265,7 @@ h3 {
   padding: 5px 15px;
   margin: 30px 15px 10px 15px;
   padding: 10px 20px;
-  width: 270px;
+  width: 200px;
   height: 60px;
 }
 .contactar .grupo-ingresos {
@@ -253,21 +276,17 @@ h3 {
   width: 100%;
 }
 .contactar .ingreso {
-  flex: 1;
+  width: 100%;
   margin-bottom: 25px;
   font-weight: 400;
   font-size: 19px;
 }
 .contactar .ingreso input {
   width: 95%;
-  height: 34px;
-  border: 1px solid rgba(148, 148, 148, 0.596);
-  border-radius: 10px;
-  background-color: #cbc9ff;
-  padding: 19px 5px;
-  font-size: 16.5px;
+  height: 40px;
 }
-.contactar .ingreso .descargo {
+.contactar .ingreso textarea {
+  width: 90%;
   height: 110px;
 }
 .contactar .ingreso button {
@@ -295,7 +314,7 @@ footer button {
 }
 
 .boton-preguntas {
-  background-color: #9b9b9b;
+  background-color: #c0c0c0;
   color: #292929;
   border: none;
   border-radius: 8px;
@@ -336,6 +355,10 @@ footer button {
     height: 48px;
     font-size: 20px;
     margin: 14px 20px 0 10px;
+    transition: transform 0.15s ease-in-out;
+  }
+  .navbar-desktop button:hover {
+    transform: scale(0.97);
   }
   .logo {
     font-size: 38px;
@@ -347,21 +370,37 @@ footer button {
     display: none;
   }
   .enlaces {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 300px 80px;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
   }
   .enlaces a {
-    color: #000000;
-    font-size: 32px;
+    position: relative;
+    color: #222222;
+    font-size: 1.8rem;
     text-decoration: none;
+    font-weight: 500;
+  }
+  .enlaces a::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #4640f1;
+    transform: translateX(-50%);
+    transition: width 0.25s ease-in-out;
+  }
+  .enlaces a:hover::after {
+    width: 100%;
   }
   .linea {
     display: block;
     opacity: 1;
     border: none;
-    width: 75%;
+    width: 80%;
     height: 2.9px;
     background-color: #4640f1;
     margin: 0 auto;
@@ -374,9 +413,13 @@ footer button {
     text-shadow: #4640f1 1px 2px 3px;
     color: #000;
   }
+  #carouselExampleAutoplaying {
+    border-radius: 100px;
+    overflow: hidden;
+  }
   .carousel {
     width: 92%;
-    height: 800px;
+    height: 100%;
   }
   .beneficios {
     flex-wrap: wrap;
@@ -411,12 +454,15 @@ footer button {
     width: 40%;
     margin: 15px auto;
   }
+  .contenedor-productos-destacados .producto-destacado {
+    width: 100%;
+  }
   .contenedor-productos-destacados img {
     width: 400px;
     height: 200px;
   }
   .contenedor-productos-destacados button {
-    width: 260px;
+    width: 85%;
   }
   .contenedor-productos-destacados-pag2 {
     width: 100%;
@@ -426,10 +472,11 @@ footer button {
     margin-bottom: 150px;
   }
   .contenedor-productos-destacados-pag2 button {
-    width: 260px;
+    width: 85%;
   }
-  .producto-destacado-pag2, .producto-destacado-compu {
-    width: 30%;
+  .producto-destacado-pag2,
+  .producto-destacado-compu {
+    width: 31%;
     margin: 17px;
     height: 230px;
   }
@@ -442,12 +489,26 @@ footer button {
     height: 60px;
     font-size: 22px;
   }
+  .contactar h2 {
+    font-size: 1.85rem;
+    margin: 90px 0 30px 0;
+  }
+  .contactar .grupo-ingresos {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .contactar .grupo-ingresos .par-ingresos {
     text-align: left;
-    margin-left: 18px;
+    width: 90%;
   }
   .contactar .grupo-ingresos .ingreso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
+    gap: 5px;
   }
   .contactar .grupo-ingresos .ingreso input {
     height: 70px;

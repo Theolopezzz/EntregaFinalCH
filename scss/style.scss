@@ -17,29 +17,28 @@ body {
 .navbar {
   background-color: v.$light-gray;
   @include m.shadow(v.$primary-color, 0px, 2px, 40px, 1px);
-  border-bottom:#9fb0ff 2.9px solid;
+  border-bottom: #9fb0ff 2.9px solid;
   margin-bottom: none;
   margin-bottom: 30px;
-  .container-fluid{
+  .container-fluid {
     padding: 0px;
     margin: 10px 5px 0 5px;
-    .nav-item{
+    .nav-item {
       margin-left: 10px;
     }
-    input{
+    input {
       width: 200px;
-      height: 50px;;
+      height: 50px;
       margin-left: 5px;
+      padding: 5px 15px;
     }
   }
-  
-}
-
-.navbar-brand {
-  font-size: 27px;
-  margin: 7px;
-  font-weight: bold;
-  text-shadow: v.$text-shadow-dark 1px 1.3px 2.5px;
+  .navbar-brand {
+    font-size: 27px;
+    margin: 0 0 7px 5px;
+    font-weight: bold;
+    text-shadow: v.$text-shadow-dark 1px 1.3px 2.5px;
+  }
 }
 
 .boton-header {
@@ -47,9 +46,10 @@ body {
   margin: 0 5px 0 0;
   height: 38px;
   width: 60px;
-  transition: 0.1s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
-.boton-header:hover {
+.boton-header:hover,
+.btn-outline-success:hover {
   background-color: rgb(172, 172, 172);
   color: black;
 }
@@ -60,6 +60,7 @@ body {
 
 .btn-outline-success {
   @include m.button-style(v.$primary-color, v.$light-gray);
+  transition: all 0.2s ease-in-out;
 }
 
 .form-control {
@@ -69,13 +70,13 @@ body {
 
 // Main------------------------------
 .enlaces,
-.linea, 
+.linea,
 .ocultar-h1 {
   display: none;
 }
 
 #carouselExampleAutoplaying {
-  border-radius: 90px;
+  border-radius: 80px;
   overflow: hidden;
 }
 
@@ -104,7 +105,8 @@ h1 {
     img {
       width: 37px;
       height: auto;
-      filter: brightness(0) saturate(100%) invert(25%) sepia(97%) saturate(4000%) hue-rotate(233deg) brightness(100%) contrast(110%);
+      filter: brightness(0) saturate(100%) invert(25%) sepia(97%)
+        saturate(4000%) hue-rotate(233deg) brightness(100%) contrast(110%);
     }
 
     strong {
@@ -112,13 +114,11 @@ h1 {
       font-size: 1.1rem;
       font-weight: 500;
     }
-
   }
 }
 
-
 h3 {
-  margin: 50px 0px 50px 18px;
+  margin: 50px 18px 50px 18px;
 }
 
 .contenedor-productos-destacados,
@@ -132,20 +132,20 @@ h3 {
 .producto-destacado {
   @extend %product-style;
   transition: transform 0.22s ease-in-out;
- img {
-  width: 40%;
-  object-fit: contain;
-  height: auto;
- }
+  img {
+    width: 40%;
+    object-fit: contain;
+    height: auto;
+  }
   &-info {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin: 5px;
-    h4{
-    font-size: 21px;
+    h4 {
+      font-size: 21px;
     }
-    p{
+    p {
       width: 100%;
     }
     button {
@@ -154,17 +154,23 @@ h3 {
       color: v.$background-page;
       margin-top: 15px;
       padding: 0 30px;
+      transition: all 0.3s ease-in-out;
     }
   }
 }
+.producto-destacado button:hover,
+.producto-destacado-pag2 button:hover,
+.producto-destacado-compu button:hover {
+  background-color: #170b85;
+  color: #ffffff;
+}
 .producto-destacado:hover,
 .producto-destacado-pag2:hover,
-.producto-destacado-compu:hover{
+.producto-destacado-compu:hover {
   transform: scale(1.015) translateY(-10px);
 }
 
-
-.producto-destacado-pag2, 
+.producto-destacado-pag2,
 .producto-destacado-compu {
   @extend %product-style;
   transition: transform 0.22s ease-in-out;
@@ -176,10 +182,10 @@ h3 {
     object-fit: contain;
     height: auto;
   }
-  h4{
+  h4 {
     font-size: 21px;
   }
-  p{
+  p {
     width: 100%;
   }
   &-info {
@@ -197,66 +203,61 @@ h3 {
     }
   }
 }
-.producto-destacado-compu{
+.producto-destacado-compu {
   height: auto;
 }
-.contactar{
+.contactar {
   @extend %flex-center;
   text-align: center;
   flex-direction: column;
 
-  h3{
+  h3 {
     font-size: 19px;
     margin: 40px 0px 20px 0px;
     font-weight: 400;
   }
-  // h2 {
-  //   font-size: 22px;
-  //   margin: 50px 10px 25px 10px;
-    
-  // }
-  button:hover{
+  h2 {
+    font-size: 22px;
+    margin: 50px 10px 25px 10px;
+  }
+  button:hover {
     transform: scale(1.1);
   }
-  button{
+  button {
     @include m.button-style(v.$primary-color, v.$light-gray);
     margin: 30px 15px 10px 15px;
     padding: 10px 20px;
-    width: 270px;
+    width: 200px;
     height: 60px;
   }
-  .grupo-ingresos{
+  .grupo-ingresos {
     width: 100%;
   }
-  .par-ingresos{
+  .par-ingresos {
     display: flex;
     width: 100%;
-    
   }
-  .ingreso{
-    flex: 1;
+  .ingreso {
+    width: 100%;
     margin-bottom: 25px;
     font-weight: 400;
     font-size: 19px;
-    input{
+    input {
       width: 95%;
-      height: 34px;
-      border: 1px solid v.$medium-gray;
-      border-radius: 10px;
-      background-color: #cbc9ff;
-      padding: 19px 5px;
-      font-size: 16.5px;
+      height: 40px;
+      @extend %ingresoContacto;
     }
-    .descargo{
+    textarea {
+      width: 90%;
       height: 110px;
+      @extend %ingresoContacto;
     }
-    button{
-       width: 75%;
-       height: 50px;
+    button {
+      width: 75%;
+      height: 50px;
     }
   }
 }
-
 
 // Footer
 footer {
@@ -277,7 +278,7 @@ footer {
 }
 
 .boton-preguntas {
-  @include m.button-style(#9b9b9b, v.$dark-gray);
+  @include m.button-style(#c0c0c0, v.$dark-gray);
 }
 
 // Media Queries
@@ -309,6 +310,10 @@ footer {
       height: 48px;
       font-size: 20px;
       margin: 14px 20px 0 10px;
+      transition: transform 0.15s ease-in-out;
+    }
+    button:hover {
+      transform: scale(0.97);
     }
   }
 
@@ -324,15 +329,33 @@ footer {
   }
 
   .enlaces {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 300px 80px;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
 
     a {
-      color: #000000;
-      font-size: 32px;
+      position: relative;
+      color: #222222;
+      font-size: 1.8rem;
       text-decoration: none;
+      font-weight: 500;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: v.$primary-color;
+        transform: translateX(-50%);
+        transition: width 0.25s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 
@@ -340,7 +363,7 @@ footer {
     display: block;
     opacity: 1;
     border: none;
-    width: 75%;
+    width: 80%;
     height: 2.9px;
     background-color: v.$primary-color;
     margin: 0 auto;
@@ -355,38 +378,41 @@ footer {
     color: #000;
   }
 
+  #carouselExampleAutoplaying {
+    border-radius: 100px;
+    overflow: hidden;
+  }
   .carousel {
     width: 92%;
-    height: 800px;
+    height: 100%;
   }
 
   .beneficios {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 80px 0;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 80px 0;
 
-  .beneficio {
-    max-width: 400px;
-    margin: 10px 90px;
-    img {
-      width: 42px;
-   }
+    .beneficio {
+      max-width: 400px;
+      margin: 10px 90px;
+      img {
+        width: 42px;
+      }
 
-    strong {
-      display: block;
-      font-size: 1.3rem;
-      font-weight: 500;
+      strong {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+    }
+    .divisor {
+      height: 50px;
+      width: 2px;
+      background-color: #adadad;
     }
   }
-  .divisor {
-    height: 50px;
-    width: 2px;
-    background-color: #adadad;
-    // margin: 0 10px;
-  }
-}
 
   h3 {
     font-size: 49px;
@@ -397,12 +423,15 @@ footer {
   .contenedor-productos-destacados {
     width: 40%;
     margin: 15px auto;
-    img{
+    .producto-destacado {
+      width: 100%;
+    }
+    img {
       width: 400px;
       height: 200px;
     }
-    button{
-      width: 260px;
+    button {
+      width: 85%;
     }
   }
 
@@ -412,47 +441,54 @@ footer {
     display: flex;
     flex-direction: row;
     margin-bottom: 150px;
-    button{
-      width: 260px;
+    button {
+      width: 85%;
     }
   }
 
-  .producto-destacado-pag2,.producto-destacado-compu {
-    width: 30%;
+  .producto-destacado-pag2,
+  .producto-destacado-compu {
+    width: 31%;
     margin: 17px;
     height: 230px;
   }
-  .contactar{
-    h3{
+  .contactar {
+    h3 {
       font-size: 40px;
       margin: 20px 0 50px 0;
     }
-    button{
+    button {
       width: 300px;
       height: 60px;
       font-size: 22px;
-      
     }
-    // h2{
-    //   font-size: 30px;
-    //   margin: 90px 0 30px 0;
-    // }
-    .grupo-ingresos{ 
-      
+    h2 {
+      font-size: 1.85rem;
+      margin: 90px 0 30px 0;
+    }
+    .grupo-ingresos {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
       .par-ingresos {
         text-align: left;
-        margin-left: 18px;
+        width: 90%;
       }
-      .ingreso{
+      .ingreso {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 50px;
-        
-        input{
+        gap: 5px;
+        input {
           height: 70px;
         }
-        label{
-        font-size: 22px;
+        label {
+          font-size: 22px;
         }
-        button{
+        button {
           width: 300px;
           height: 70px;
           font-size: 23px;
@@ -460,5 +496,5 @@ footer {
         }
       }
     }
-  } 
+  }
 }

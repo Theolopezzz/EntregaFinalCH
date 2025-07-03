@@ -1,4 +1,5 @@
 @use "./mixins" as m;
+@use "./variables" as v;
 
 %flex-center {
   display: flex;
@@ -15,4 +16,12 @@
   justify-content: center;
   gap: 15px;
   margin-top: 20px;
+}
+%ingresoContacto{
+  border: 1px solid v.$medium-gray;
+  border-radius: 10px;
+  background-color: #d8d8d8;
+  padding: 10px 5px;
+  font-size: 16.5px;
+  box-shadow: v.$text-shadow-dark 0px 2px 5px 0px;
 }
