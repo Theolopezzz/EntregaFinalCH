@@ -93,7 +93,7 @@ body {
 
 .enlaces,
 .linea,
-.titulo-desktop {
+.ocultar-h1 {
   display: none;
 }
 
@@ -108,13 +108,36 @@ body {
 }
 
 h1 {
-  font-size: 22px;
-  margin: 0 10px 30px;
-  text-shadow: #af98ff 1px 2px 1px;
+  display: none;
+}
+
+.beneficios {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  margin: 35px 0 10px 7px;
+}
+.beneficios .beneficio {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  max-width: 300px;
+  margin: 10px 10px;
+}
+.beneficios .beneficio img {
+  width: 37px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(97%) saturate(4000%) hue-rotate(233deg) brightness(100%) contrast(110%);
+}
+.beneficios .beneficio strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 h3 {
-  margin: 40px 0px 50px 18px;
+  margin: 50px 0px 50px 18px;
 }
 
 .contenedor-productos-destacados,
@@ -207,10 +230,6 @@ h3 {
   font-size: 19px;
   margin: 40px 0px 20px 0px;
   font-weight: 400;
-}
-.contactar h2 {
-  font-size: 22px;
-  margin: 50px 10px 25px 10px;
 }
 .contactar button:hover {
   transform: scale(1.1);
@@ -347,7 +366,7 @@ footer button {
     background-color: #4640f1;
     margin: 0 auto;
   }
-  .titulo-desktop {
+  h1 {
     display: block;
     font-size: 60px;
     margin: 90px 0px 30px;
@@ -358,6 +377,30 @@ footer button {
   .carousel {
     width: 92%;
     height: 800px;
+  }
+  .beneficios {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 80px 0;
+  }
+  .beneficios .beneficio {
+    max-width: 400px;
+    margin: 10px 90px;
+  }
+  .beneficios .beneficio img {
+    width: 42px;
+  }
+  .beneficios .beneficio strong {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .beneficios .divisor {
+    height: 50px;
+    width: 2px;
+    background-color: #adadad;
   }
   h3 {
     font-size: 49px;
@@ -398,10 +441,6 @@ footer button {
     width: 300px;
     height: 60px;
     font-size: 22px;
-  }
-  .contactar h2 {
-    font-size: 30px;
-    margin: 90px 0 30px 0;
   }
   .contactar .grupo-ingresos .par-ingresos {
     text-align: left;
